@@ -47,5 +47,17 @@ export default {
 </script>
 
 <style scoped>
+th {
+  background: rgb(0, 131, 33);
+  padding: 10px;
+}
+td {
+  background: rgb(56, 163, 83);
+  padding: 10px;
+}
+table {
+  margin-left: 7%;
+  margin-right: 7%;
+}
 
 </style>
