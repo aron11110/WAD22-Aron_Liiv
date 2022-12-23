@@ -1,7 +1,7 @@
 <template>
 <div>
-    <h3 v-if="$route.params.id === 'fall'"> Fall  </h3>
-    <h3 v-else-if="'spring'"> Spring </h3>
+    <h3 v-if="$route.params.id === 'fall'"> fall  </h3>
+    <h3 v-else-if="'spring'"> spring </h3>
           <div v-if="$route.params.id === 'fall'">
         <table>
           <tr>
@@ -49,7 +49,7 @@
 
 
 </div>
-
+<a href="/courses"> Back to courses </a>
 </template>
 
 

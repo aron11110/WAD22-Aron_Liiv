@@ -14,7 +14,7 @@ const routes = [{
         component: AboutView,
     },
     {
-        path: '/semester/:id',
+        path: '/semesters/:id',
         name: 'Semester',
         component: Semester
 
