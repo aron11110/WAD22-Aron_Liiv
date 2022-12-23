@@ -63,25 +63,41 @@ export default {
         }
     },
     methods: {
-        fetch_courses() {
-            fetch(`http://localhost:3000/api/courses/`)
+        // fetch_courses() {
+        //     fetch(`http://localhost:3000/api/courses/`)
+        //     .then((response) => response.json())
+        //     .then((res) => {
+        //         for (let i = 0; i < res.length; i++) {
+        //             console.log(res[i])
+        //             if (res[i].semester === "spring") {
+        //                 this.Spring.push(res[i])
+        //             } else {
+        //                 this.Fall.push(res[i])
+        //             }
+        //         }
+        //     })
+        // }
+        fetch_spring() {
+            fetch('http://localhost:3000/api/semesters/spring')
             .then((response) => response.json())
-            .then((res) => {
-                for (let i = 0; i < res.length; i++) {
-                    console.log(res[i])
-                    if (res[i].semester === "spring") {
-                        this.Spring.push(res[i])
-                    } else {
-                        this.Fall.push(res[i])
-                    }
-                }
-            })
+            .then((data) => this.Spring = data)
+            .then(console.log(this.Spring))
+        },
+        fetch_fall() {
+            fetch('http://localhost:3000/api/semesters/fall')
+            .then((response) => response.json())
+            .then((data) => this.Fall = data)
+            .then(console.log(this.Fall))
+
         }
 
     },
     mounted() {
-        this.fetch_courses()
-        console.log("getting fall and spring info")
+        if (this.$route.params.id === 'spring') {
+            this.fetch_spring()
+        } else if (this.$route.params.id === 'fall') {
+            this.fetch_fall()
+        }
     }
 
 }
