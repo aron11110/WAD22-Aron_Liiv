@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Courses from "../views/Courses.vue";
 import AboutView from "../views/AboutView.vue";
+import Semester from "../views/Semester.vue"
 
 const routes = [{
         path: '/',
@@ -11,6 +12,12 @@ const routes = [{
         path: '/about',
         name: 'AboutView',
         component: AboutView,
+    },
+    {
+        path: '/semester/:id',
+        name: 'Semester',
+        component: Semester
+
     },
     { //will route to AllPosts view if none of the previous routes apply
         path: "/:catchAll(.*)",
